@@ -3,7 +3,16 @@ import { View, Text, StyleSheet } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 const FavoriteDevices = () => {
-  const devices = Array(8).fill({ name: 'Switch 1.1', location: 'Living room' });
+  const devices = [
+    { name: 'Switch 1.1', location: 'Living room' , status: 'On'},
+    { name: 'Switch 1.2', location: 'Living room' , status: 'Off'},
+    { name: 'Switch 1.3', location: 'Living room' , status: 'Off'},
+    { name: 'Switch 1.4', location: 'Living room' , status: 'Off'},
+    { name: 'Switch 2.1', location: 'Living room' , status: 'Off'},
+    { name: 'Switch 2.2', location: 'Living room' , status: 'Off'},
+    { name: 'Switch 2.4', location: 'Living room' , status: 'Off'},
+    { name: 'Switch 2.5', location: 'Living room' , status: 'Off'},
+  ];
 
   return (
     <View style={styles.container}>
@@ -18,8 +27,8 @@ const FavoriteDevices = () => {
         {devices.map((device, index) => (
           <View key={index} style={styles.device}>
             <View style={styles.deviceTop}>
-              <Icon name="lightbulb-o" size={30} color="#fff" />
-              <Text style={styles.deviceStatus}>Off</Text>
+              <Icon name="lightbulb-o" size={30} color={device.status === 'On' ? 'yellow' : '#fff'} />
+              <Text style={styles.deviceStatus}>{device.status}</Text>
             </View>
             <Text style={styles.deviceText}>{device.name}</Text>
             <Text style={styles.deviceText}>{device.location}</Text>

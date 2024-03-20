@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
   rightIcons: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    width: 100, // Adjust this value as needed
+    width: 100,
   },
 });
 
