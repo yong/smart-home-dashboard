@@ -2,6 +2,7 @@ import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import Header from './Header';
 import Banner from './Banner';
+import FavoriteScenes from './FavoriteScenes';
 import FavoriteDevices from './FavoriteDevices';
 
 const App = () => {
@@ -13,6 +14,7 @@ const App = () => {
         {/* Weather component goes here */}
         <Text style={styles.text}>Weather Info</Text>
       </View>
+      <FavoriteScenes/>
       <FavoriteDevices/>
     </View>
   );

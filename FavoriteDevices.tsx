@@ -61,6 +61,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     padding: 10,
     marginBottom: 10,
+    marginRight: 10,
   },
   deviceTop: {
     flexDirection: 'row',
