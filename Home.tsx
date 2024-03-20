@@ -1,20 +1,20 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { ScrollView, Text, StyleSheet } from 'react-native';
 import Header from './Header';
 import Banner from './Banner';
 import FavoriteScenes from './FavoriteScenes';
 import FavoriteDevices from './FavoriteDevices';
 import Weather from './Weather';
 
-const App = () => {
+const Home = () => {
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container}>
       <Header />
       <Banner />
       <Weather />
       <FavoriteScenes/>
       <FavoriteDevices/>
-    </View>
+    </ScrollView>
   );
 };
 
@@ -38,4 +38,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default App;
+export default Home;
