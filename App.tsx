@@ -17,10 +17,10 @@ const App = () => {
           tabBarActiveTintColor: 'white',
           tabBarInactiveTintColor: 'gray',
           tabBarStyle: {
-            backgroundColor: '#333', // Very dark gray
+            backgroundColor: '#333',
           },
           tabBarLabelStyle: {
-            display: 'none', // This will hide the label
+            display: 'none',
           },
         })}
       >

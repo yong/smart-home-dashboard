@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
     width: 10,
     height: 10,
     borderRadius: 5,
-    backgroundColor: '#00ff00', // Green color
+    backgroundColor: '#00ff00',
     marginRight: 10,
   },
   text: {

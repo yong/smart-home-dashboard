@@ -4,16 +4,14 @@ import Header from './Header';
 import Banner from './Banner';
 import FavoriteScenes from './FavoriteScenes';
 import FavoriteDevices from './FavoriteDevices';
+import Weather from './Weather';
 
 const App = () => {
   return (
     <View style={styles.container}>
       <Header />
       <Banner />
-      <View style={styles.weather}>
-        {/* Weather component goes here */}
-        <Text style={styles.text}>Weather Info</Text>
-      </View>
+      <Weather />
       <FavoriteScenes/>
       <FavoriteDevices/>
     </View>

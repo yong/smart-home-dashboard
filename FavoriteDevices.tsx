@@ -3,7 +3,6 @@ import { View, Text, StyleSheet } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 const FavoriteDevices = () => {
-  // This is a placeholder for your devices data
   const devices = Array(8).fill({ name: 'Switch 1.1', location: 'Living room' });
 
   return (
@@ -56,7 +55,7 @@ const styles = StyleSheet.create({
     marginTop: 10,
   },
   device: {
-    width: '30%', // Adjust this value as needed
+    width: '30%',
     backgroundColor: '#333',
     borderRadius: 10,
     padding: 10,
