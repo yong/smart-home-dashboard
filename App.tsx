@@ -1,45 +1,37 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
-import Header from './Header';
-import Banner from './Banner';
+import { NavigationContainer } from '@react-navigation/native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import Icon from 'react-native-vector-icons/FontAwesome';
+import Home from './Home';
+
+const Tab = createBottomTabNavigator();
 
 const App = () => {
   return (
-    <View style={styles.container}>
-      <Header />
-      <Banner />
-      <View style={styles.weather}>
-        {/* Weather component goes here */}
-        <Text style={styles.text}>Weather Info</Text>
-      </View>
-      <View style={styles.devices}>
-        {/* Map your devices here */}
-        <Text style={styles.text}>Device 1</Text>
-        <Text style={styles.text}>Device 2</Text>
-        <Text style={styles.text}>Device 3</Text>
-      </View>
-    </View>
+    <NavigationContainer>
+      <Tab.Navigator
+        screenOptions={({ route }) => ({
+          tabBarIcon: ({ color, size }) => {
+            return <Icon name={route.name} size={size} color={color} />;
+          },
+          tabBarActiveTintColor: 'white',
+          tabBarInactiveTintColor: 'gray',
+          tabBarStyle: {
+            backgroundColor: '#333', // Very dark gray
+          },
+          tabBarLabelStyle: {
+            display: 'none', // This will hide the label
+          },
+        })}
+      >
+        <Tab.Screen name="windows" component={Home} options={{ headerShown: false }} />
+        <Tab.Screen name="server" component={Home} options={{ headerShown: false }} />
+        <Tab.Screen name="home" component={Home} options={{ headerShown: false }} />
+        <Tab.Screen name="music" component={Home} options={{ headerShown: false }} />
+        <Tab.Screen name="bars" component={Home} options={{ headerShown: false }} />
+      </Tab.Navigator>
+    </NavigationContainer>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    padding: 10,
-    backgroundColor: '#000',
-  },
-  text: {
-    color: '#fff',
-  },
-  weather: {
-    marginTop: 20,
-  },
-  devices: {
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    justifyContent: 'space-between',
-    marginTop: 20,
-  },
-});
 
 export default App;

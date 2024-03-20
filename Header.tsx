@@ -8,7 +8,7 @@ const Header = () => (
     <View style={styles.rightIcons}>
       <Icon name="globe" size={30} color="#00ff00" />
       <Icon name="bell" size={30} color="#fff" />
-      <Icon name="video-camera" size={30} color="#fff" />
+      <Icon name="calendar" size={30} color="#fff" />
     </View>
   </View>
 );
