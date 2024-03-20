@@ -2,6 +2,7 @@ import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import Header from './Header';
 import Banner from './Banner';
+import FavoriteDevices from './FavoriteDevices';
 
 const App = () => {
   return (
@@ -12,12 +13,7 @@ const App = () => {
         {/* Weather component goes here */}
         <Text style={styles.text}>Weather Info</Text>
       </View>
-      <View style={styles.devices}>
-        {/* Map your devices here */}
-        <Text style={styles.text}>Device 1</Text>
-        <Text style={styles.text}>Device 2</Text>
-        <Text style={styles.text}>Device 3</Text>
-      </View>
+      <FavoriteDevices/>
     </View>
   );
 };
