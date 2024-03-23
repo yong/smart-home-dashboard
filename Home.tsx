@@ -11,7 +11,7 @@ const Home = () => {
     <ScrollView style={styles.container}>
       <Header />
       <Banner />
-      <Weather />
+      <Weather latitude={38.9072} longitude={-77.0369} />
       <FavoriteScenes/>
       <FavoriteDevices/>
     </ScrollView>
