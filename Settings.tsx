@@ -19,7 +19,7 @@ const Settings = () => {
   });
 
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: '#fff' }}>
+    <SafeAreaView style={{ flex: 1, backgroundColor: '#000' }}>
       <View style={styles.container}>
         <View style={styles.profile}>
           <TouchableOpacity
@@ -228,7 +228,7 @@ const styles = StyleSheet.create({
   /** Profile */
   profile: {
     padding: 24,
-    backgroundColor: '#fff',
+    backgroundColor: '#000',
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
@@ -256,7 +256,7 @@ const styles = StyleSheet.create({
     marginTop: 20,
     fontSize: 19,
     fontWeight: '600',
-    color: '#414d63',
+    color: '#fff',
     textAlign: 'center',
   },
   profileAddress: {
@@ -283,7 +283,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'flex-start',
     height: 50,
-    backgroundColor: '#f2f2f2',
+    backgroundColor: '#1c1c1e',
     borderRadius: 8,
     marginBottom: 12,
     paddingLeft: 12,
@@ -301,7 +301,7 @@ const styles = StyleSheet.create({
   rowLabel: {
     fontSize: 17,
     fontWeight: '400',
-    color: '#0c0c0c',
+    color: '#fff',
   },
   rowSpacer: {
     flexGrow: 1,
