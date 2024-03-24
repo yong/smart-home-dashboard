@@ -4,6 +4,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import Home from './Home';
+import Settings from './Settings';
 
 const Tab = createBottomTabNavigator();
 
@@ -30,7 +31,7 @@ const App = () => {
           <Tab.Screen name="server" component={Home} options={{ headerShown: false }} />
           <Tab.Screen name="home" component={Home} options={{ headerShown: false }} />
           <Tab.Screen name="music" component={Home} options={{ headerShown: false }} />
-          <Tab.Screen name="bars" component={Home} options={{ headerShown: false }} />
+          <Tab.Screen name="bars" component={Settings} options={{ headerShown: false }} />
         </Tab.Navigator>
       </NavigationContainer>
     </SafeAreaView>

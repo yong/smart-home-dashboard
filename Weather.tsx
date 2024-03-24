@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, StyleSheet, Image } from 'react-native';
+import { View, Text, StyleSheet, ActivityIndicator } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 // Hard coded data
@@ -46,7 +46,7 @@ const Weather = ({ latitude, longitude }) => {
   }, [latitude, longitude]);
   
   if (!weatherData) {
-    return <Text>Loading...</Text>;
+    return <ActivityIndicator/>;
   }
 
   return (
