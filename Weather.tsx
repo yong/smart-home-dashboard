@@ -26,6 +26,8 @@ const Weather = ({ latitude, longitude }) => {
         const forecastResponse = await fetch(forecastUrl);
         const forecastData = await forecastResponse.json();
 
+        console.log("forecastData", forecastData);
+
         // Extract the current weather conditions
         const currentConditions = forecastData.properties.periods[0];
         setWeatherData({
@@ -54,7 +56,7 @@ const Weather = ({ latitude, longitude }) => {
       <View style={styles.leftContainer}>
         <Text style={styles.temperature}>{`${weatherData.temperature}°${weatherData.temperatureUnit}`}</Text>
         <View style={styles.humidityContainer}>
-          <Icon name="tint" size={20} color="#fff" />
+          <Icon name="tint" size={18} color="#fff" />
           <Text style={styles.humidity}>{weatherData.relativeHumidity}</Text>
         </View>
       </View>

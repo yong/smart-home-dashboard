@@ -1,18 +1,31 @@
 import React from 'react';
+import { useState } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import AddDeviceModal from './AddDeviceModal';
+
+const initialDevices = [
+  { name: 'Switch 1.1', location: 'Living room' , status: 'On'},
+  { name: 'Switch 1.2', location: 'Living room' , status: 'Off'},
+  { name: 'Switch 1.3', location: 'Living room' , status: 'Off'},
+  { name: 'Switch 1.4', location: 'Living room' , status: 'Off'},
+  { name: 'Switch 2.1', location: 'Living room' , status: 'Off'},
+  { name: 'Switch 2.2', location: 'Living room' , status: 'Off'},
+  { name: 'Switch 2.4', location: 'Living room' , status: 'Off'},
+  { name: 'Switch 2.5', location: 'Living room' , status: 'Off'},
+];
 
 const FavoriteDevices = () => {
-  const devices = [
-    { name: 'Switch 1.1', location: 'Living room' , status: 'On'},
-    { name: 'Switch 1.2', location: 'Living room' , status: 'Off'},
-    { name: 'Switch 1.3', location: 'Living room' , status: 'Off'},
-    { name: 'Switch 1.4', location: 'Living room' , status: 'Off'},
-    { name: 'Switch 2.1', location: 'Living room' , status: 'Off'},
-    { name: 'Switch 2.2', location: 'Living room' , status: 'Off'},
-    { name: 'Switch 2.4', location: 'Living room' , status: 'Off'},
-    { name: 'Switch 2.5', location: 'Living room' , status: 'Off'},
-  ];
+  const [devices, setDevices] = useState(initialDevices);
+  const [modalVisible, setModalVisible] = useState(false);
+
+  const addDevice = (name, location) => {
+    if (name && location) {
+      const newDevice = { name, location, status: 'Off' };
+      setDevices([...devices, newDevice]);
+    }
+    setModalVisible(false);
+  };
 
   return (
     <View style={styles.container}>
@@ -20,7 +33,7 @@ const FavoriteDevices = () => {
         <Text style={styles.headerText}>Favorite devices</Text>
         <View style={styles.headerIcons}>
           <Icon name="gear" size={20} color="#fff" />
-          <Icon name="plus" size={20} color="#fff" />
+          <Icon name="plus" size={20} color="#fff"  onPress={() => setModalVisible(true)} />
         </View>
       </View>
       <View style={styles.grid}>
@@ -35,6 +48,7 @@ const FavoriteDevices = () => {
           </View>
         ))}
       </View>
+      <AddDeviceModal visible={modalVisible} onAddDevice={addDevice} />
     </View>
   );
 };
